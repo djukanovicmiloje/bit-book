@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import loginDispatcher from "../../features/login/dispatcher";
 import LoginForm from "../components/LoginForm/LoginForm";
 import { connect } from "react-redux";
+import { Redirect } from "react-router";
 
 class LoginPage extends Component {
   constructor(props) {
@@ -35,14 +36,17 @@ class LoginPage extends Component {
     const { email, password } = this.state;
     const { isLoginPending, isLoginSuccess, loginError } = this.props;
     return (
-      <LoginForm
-        onLoginClick={() => this.onLoginClick()}
-        onInputChange={e => this.onInputChange()}
-        isLoginPending={isLoginPending}
-        loginError={loginError}
-        email={email}
-        password={password}
-      />
+      <React.Fragment>
+        {isLoginSuccess && <Redirect to="/posts" />}
+        <LoginForm
+          onLoginClick={() => this.onLoginClick()}
+          onInputChange={e => this.onInputChange(e)}
+          isLoginPending={isLoginPending}
+          loginError={loginError}
+          email={email}
+          password={password}
+        />
+      </React.Fragment>
     );
   }
 }

@@ -1,0 +1,14 @@
+@import "../../../shared/constants.scss";
+
+header {
+  height: 60px;
+  background-color: $header-color;
+  color: white;
+  line-height: 60px;
+  font-size: 35px;
+  div {
+    width: 90%;
+    max-width: 300px;
+    margin: auto;
+  }
+}
