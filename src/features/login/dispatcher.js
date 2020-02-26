@@ -7,15 +7,17 @@ const loginDispatcher = loginData => dispatch => {
   dispatch(setLoginSuccess(false));
   dispatch(setLoginError(null));
 
-  loginRequest(loginData).then(loginStatus => {
-    dispatch(setLoginPending(false));
-    if (loginStatus.successful) {
-      storeAccessToken(loginStatus.accessToken);
-      dispatch(setLoginSuccess(true));
-    } else {
-      dispatch(setLoginError(loginStatus.message));
-    }
-  });
+  loginRequest(loginData)
+    .then(loginStatus => {
+      dispatch(setLoginPending(false));
+      if (loginStatus.successful) {
+        storeAccessToken(loginStatus.accessToken);
+        dispatch(setLoginSuccess(true));
+      } else {
+        dispatch(setLoginError(loginStatus.message));
+      }
+    })
+    .catch(error => dispatch(setLoginError(error)));
 };
 
 export default loginDispatcher;

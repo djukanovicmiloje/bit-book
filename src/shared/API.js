@@ -1,4 +1,4 @@
-import { URL } from "../shared/constants";
+import { URL } from "./constants";
 
 class API {
   post(path, headers, body) {

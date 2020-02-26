@@ -1,5 +1,5 @@
 import { requestHeaders } from "../shared/constants";
-import API from "./API";
+import API from "../shared/API";
 import parseLoginError from "../utils/parseLoginError";
 
 const loginRequest = loginData =>
