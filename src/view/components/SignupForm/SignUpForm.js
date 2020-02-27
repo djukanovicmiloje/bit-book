@@ -52,8 +52,8 @@ const SignUpForm = ({
         )}
         {!isEmailValid && <div>Please enter a valid email address!</div>}
       </div>
-      <button onClick={() => onSignUpClick()}>Sign up</button>
       <Link to="/login">Already have an account? Log In now.</Link>
+      <button onClick={() => onSignUpClick()}>Sign up</button>
     </div>
   </React.Fragment>
 );

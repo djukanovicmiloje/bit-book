@@ -8,6 +8,12 @@ class API {
       body: JSON.stringify(body)
     }).then(response => response.json());
   }
+  get(path, headers) {
+    return fetch(URL + path, {
+      method: "GET",
+      headers
+    }).then(response => response.json());
+  }
 }
 
 export default new API();

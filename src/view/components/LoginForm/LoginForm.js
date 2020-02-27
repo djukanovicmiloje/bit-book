@@ -32,8 +32,8 @@ const LoginForm = ({
         {isLoginPending && <div>Please wait...</div>}
         {loginError && <div>{loginError}</div>}
       </div>
-      <button onClick={() => onLoginClick()}>Log In</button>
       <Link to="/register">Don't have an account? Make one now.</Link>
+      <button onClick={() => onLoginClick()}>Log In</button>
     </div>
   </React.Fragment>
 );
