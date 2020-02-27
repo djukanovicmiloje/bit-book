@@ -4,7 +4,8 @@ const usersReducer = (
   state = {
     areUsersFetched: false,
     users: [],
-    error: null
+    error: null,
+    loggedInUser: null
   },
   action
 ) => {

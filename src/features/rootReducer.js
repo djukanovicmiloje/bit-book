@@ -2,14 +2,14 @@ import { combineReducers } from "redux";
 
 import loginReducer from "./login/reducer";
 import signUpReducer from "./signup/reducer";
-import postsDispatcher from "./posts/dispatcher";
+import postsReducer from "./posts/reducer";
 import usersReducer from "./users/reducer";
 import commentsReducer from "./comments/reducer";
 
 const rootReducer = combineReducers({
   login: loginReducer,
   signup: signUpReducer,
-  posts: postsDispatcher,
+  posts: postsReducer,
   users: usersReducer,
   comments: commentsReducer
 });

@@ -3,7 +3,7 @@ import { requestHeaders } from "../shared/constants";
 import User from "../entities/user";
 
 const fetchUsers = () =>
-  API.get("posts", requestHeaders).then(usersData =>
+  API.get("users", requestHeaders).then(usersData =>
     usersData.map(userData => new User(userData))
   );
 
