@@ -7,6 +7,14 @@
     color: purple;
   }
   width: 100%;
+
+  p {
+    padding: 10px;
+    font-size: 25px;
+  }
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #808080;
 }
 
 .posts_container {
@@ -19,4 +27,9 @@
   margin: auto;
   display: flex;
   flex-direction: column;
+  background-color: white;
+}
+
+body {
+  background-color: #d8dfea;
 }

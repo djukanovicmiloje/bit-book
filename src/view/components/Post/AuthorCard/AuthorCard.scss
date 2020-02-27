@@ -1,0 +1,20 @@
+.author_card {
+  height: 70px;
+  display: flex;
+  justify-content: start;
+  padding: 5px;
+  img {
+    height: 60px;
+    border-radius: 50%;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 10px;
+    a {
+      font-size: 25px;
+      text-decoration: none;
+    }
+  }
+}
