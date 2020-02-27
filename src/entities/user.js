@@ -6,6 +6,9 @@ class User {
     this.email = userData.email;
     this.createdAt = userData.createdAt;
   }
+  getName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
 }
 
 export default User;

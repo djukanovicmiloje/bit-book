@@ -4,6 +4,7 @@ import postsDispatcher from "../../features/posts/dispatcher";
 import usersDispatcher from "../../features/users/dispatcher";
 import commentsDispatcher from "../../features/comments/dispatcher";
 import { connect } from "react-redux";
+import Post from "../components/Post/Post";
 
 class PostsPage extends Component {
   componentDidMount() {
@@ -16,12 +17,17 @@ class PostsPage extends Component {
     if (!this.props.isDataFetched) {
       return <div>Loading</div>;
     }
+    //fileter out foobar
+    const postsToDisplay = this.props.posts.filter((post, index) => index > 36);
+
     return (
       <React.Fragment>
         <HeaderLoggedIn />
-        {this.props.posts.map(post => (
-          <p>{post.text}</p>
-        ))}
+        <div className="posts_container">
+          {postsToDisplay.map(post => (
+            <Post post={post} />
+          ))}
+        </div>
       </React.Fragment>
     );
   }
