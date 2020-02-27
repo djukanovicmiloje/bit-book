@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const AuthorCard = props => {
   const author = props.post.getAuthor(props.users);
-  console.log(author);
+
   return (
     <div className="author_card">
       <img src={author.avatar} alt="" />

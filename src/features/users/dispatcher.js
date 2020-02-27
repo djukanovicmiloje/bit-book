@@ -11,8 +11,8 @@ const usersDispatcher = () => dispatch => {
   fetchUsers()
     .then(users => {
       dispatch(setUsers(users));
-      dispatch(setUsersFetched(true));
       dispatch(setLoggedInUser(getLoggedInUser(users)));
+      dispatch(setUsersFetched(true));
     })
     .catch(error => {
       dispatch(setUsersError(error));

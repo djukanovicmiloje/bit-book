@@ -1,4 +1,9 @@
-import { SET_USERS, SET_USERS_ERROR, SET_USERS_FETCHED } from "./types";
+import {
+  SET_USERS,
+  SET_USERS_ERROR,
+  SET_USERS_FETCHED,
+  SET_LOGGED_IN_USER
+} from "./types";
 
 const usersReducer = (
   state = {
@@ -26,6 +31,11 @@ const usersReducer = (
       return {
         ...state,
         error: action.error
+      };
+    case SET_LOGGED_IN_USER:
+      return {
+        ...state,
+        loggedInUser: action.loggedInUser
       };
 
     default:

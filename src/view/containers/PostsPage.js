@@ -5,6 +5,7 @@ import usersDispatcher from "../../features/users/dispatcher";
 import commentsDispatcher from "../../features/comments/dispatcher";
 import { connect } from "react-redux";
 import Post from "../components/Post/Post";
+import CreatePost from "../components/CreatePost/CreatePost";
 
 class PostsPage extends Component {
   componentDidMount() {
@@ -23,7 +24,9 @@ class PostsPage extends Component {
     return (
       <React.Fragment>
         <HeaderLoggedIn />
+
         <div className="posts_container">
+          <CreatePost />
           {postsToDisplay.map(post => (
             <Post post={post} />
           ))}
