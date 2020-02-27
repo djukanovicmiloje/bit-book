@@ -1,6 +1,7 @@
 import React from "react";
 import "./LoginForm.scss";
 import Header from "../Header/Header";
+import { Link } from "react-router-dom";
 
 const LoginForm = ({
   onLoginClick,
@@ -32,6 +33,7 @@ const LoginForm = ({
         {loginError && <div>{loginError}</div>}
       </div>
       <button onClick={() => onLoginClick()}>Log In</button>
+      <Link to="/register">Don't have an account? Make one now.</Link>
     </div>
   </React.Fragment>
 );

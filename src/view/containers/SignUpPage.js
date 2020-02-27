@@ -4,6 +4,7 @@ import isEmailValid from "../../utils/isEmailValid";
 import SignUpForm from "../components/SignupForm/SignUpForm";
 import singUpDispatcher from "../../features/signup/dispatcher";
 import { connect } from "react-redux";
+import { Redirect } from "react-router";
 
 class SignUpPage extends Component {
   constructor(props) {
@@ -60,16 +61,19 @@ class SignUpPage extends Component {
     const { isSignUpPending, isSignUpSuccess, signUpError } = this.props;
 
     return (
-      <SignUpForm
-        firstName={firstName}
-        lastName={lastName}
-        email={email}
-        password={password}
-        isEmailValid={isEmailValid}
-        isPasswordValid={isPasswordValid}
-        onInputChange={e => this.onInputChange(e)}
-        onSignUpClick={() => this.onSignUpClick()}
-      />
+      <React.Fragment>
+        {isSignUpSuccess && <Redirect to="/posts" />}
+        <SignUpForm
+          firstName={firstName}
+          lastName={lastName}
+          email={email}
+          password={password}
+          isEmailValid={isEmailValid}
+          isPasswordValid={isPasswordValid}
+          onInputChange={e => this.onInputChange(e)}
+          onSignUpClick={() => this.onSignUpClick()}
+        />
+      </React.Fragment>
     );
   }
 }
@@ -84,4 +88,4 @@ const mapDispatchToProps = dispatch => ({
   signUp: signUpData => dispatch(singUpDispatcher(signUpData))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignUpForm);
+export default connect(mapStateToProps, mapDispatchToProps)(SignUpPage);

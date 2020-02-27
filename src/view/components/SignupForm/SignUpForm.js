@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../../components/Header/Header";
+import { Link } from "react-router-dom";
 
 const SignUpForm = ({
   isEmailValid,
@@ -45,13 +46,14 @@ const SignUpForm = ({
       <div className="message">
         {!isPasswordValid && (
           <div>
-            Password must be at least 3 characters long, only letters and
-            digits!
+            Password must be at least 3 characters long, and contain only
+            letters and digits!
           </div>
         )}
         {!isEmailValid && <div>Please enter a valid email address!</div>}
       </div>
       <button onClick={() => onSignUpClick()}>Sign up</button>
+      <Link to="/login">Already have an account? Log In now.</Link>
     </div>
   </React.Fragment>
 );
