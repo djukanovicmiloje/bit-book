@@ -26,6 +26,11 @@ const postsReducer = (
         ...state,
         error: action.error
       };
+    case ADD_POST:
+      return {
+        ...state,
+        posts: state.posts.concat([action.post])
+      };
 
     default:
       return state;

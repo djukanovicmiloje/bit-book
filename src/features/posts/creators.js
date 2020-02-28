@@ -14,3 +14,8 @@ export const setPostsError = error => ({
   type: SET_POSTS_ERROR,
   error
 });
+
+export const addPost = postData => ({
+  type: ADD_POST,
+  post: new Post(postData)
+});
