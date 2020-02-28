@@ -3,11 +3,6 @@ import { requestHeaders, URL } from "../shared/constants";
 
 requestHeaders.Authorization = `Bearer ${localStorage.getItem("accessToken")}`;
 
-const createPost = postData =>
-  fetch(URL, {
-    method: "POST",
-    headers: requestHeaders,
-    body: JSON.stringify(postData)
-  }).then(res => res.json());
+const createPost = postData => API.post("posts", requestHeaders, postData);
 
 export default createPost;

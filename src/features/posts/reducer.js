@@ -1,4 +1,9 @@
-import { SET_POSTS, SET_POSTS_ERROR, SET_POSTS_FETCHED } from "./types";
+import {
+  SET_POSTS,
+  SET_POSTS_ERROR,
+  SET_POSTS_FETCHED,
+  ADD_POST
+} from "./types";
 
 const postsReducer = (
   state = {

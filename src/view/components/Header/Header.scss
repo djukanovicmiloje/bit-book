@@ -7,14 +7,18 @@ header {
   line-height: 60px;
   font-size: 35px;
   font-weight: bold;
-  div {
+  .header_content {
     width: 90%;
     max-width: 900px;
     margin: auto;
     display: flex;
     justify-content: space-between;
+    div {
+      display: flex;
+    }
   }
   button {
+    display: block;
     height: 60px;
     background-color: transparent;
     color: white;

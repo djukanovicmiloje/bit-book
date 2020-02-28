@@ -1,4 +1,11 @@
-import { SET_POSTS_FETCHED, SET_POSTS, SET_POSTS_ERROR } from "./types";
+import {
+  SET_POSTS_FETCHED,
+  SET_POSTS,
+  SET_POSTS_ERROR,
+  ADD_POST
+} from "./types";
+
+import Post from "../../entities/post";
 
 export const setPostsFetched = arePostsFetched => ({
   type: SET_POSTS_FETCHED,

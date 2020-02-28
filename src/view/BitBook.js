@@ -6,6 +6,7 @@ import LoginPage from "./containers/LoginPage";
 import SignUpPage from "./containers/SignUpPage";
 import PostsPage from "./containers/PostsPage";
 import CreatePostPage from "./containers/CreatePostPage";
+import ProfilePage from "./containers/ProfilePage";
 
 const BitBook = () => (
   <Provider store={store}>
@@ -15,6 +16,7 @@ const BitBook = () => (
         <Route path="/register" component={SignUpPage} />
         <Route path="/posts" component={PostsPage} />
         <Route path="/new" component={CreatePostPage} />
+        <Route path="/profile/:id" component={ProfilePage} />
       </Switch>
     </HashRouter>
   </Provider>

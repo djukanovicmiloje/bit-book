@@ -11,7 +11,7 @@ const AuthorCard = props => {
     <div className="author_card">
       <img src={author.avatar} alt="" />
       <div>
-        <Link to="/profile">{author.getName()}</Link>
+        <Link to={`/profile/${author.id}`}>{author.getName()}</Link>
         <p>{props.post.getTimeStamp()}</p>
       </div>
     </div>

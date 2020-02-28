@@ -4,10 +4,6 @@ import createPostDispatcher from "../../features/createPost/dispatcher";
 import { connect } from "react-redux";
 
 class CreatePostPage extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   onInputChange(e) {
     const name = e.target.name;
     const value = e.target.value;
@@ -15,9 +11,9 @@ class CreatePostPage extends Component {
   }
 
   onCreatePostClick() {
-    const { title, subtitle, imageUrl, text, isPublic } = this.state;
+    const { subtitle, imageUrl, text, isPublic } = this.state;
 
-    const postData = { title, subtitle, imageUrl, text, isPublic: true };
+    const postData = { title: "001", subtitle, imageUrl, text, isPublic: true };
 
     this.props.createPost(postData);
   }
@@ -26,13 +22,6 @@ class CreatePostPage extends Component {
     return (
       <div>
         <h1>Create Post</h1>
-        <input
-          onChange={e => this.onInputChange(e)}
-          type="text"
-          name="title"
-          placeholder="title"
-        />
-        <br />
         <input
           onChange={e => this.onInputChange(e)}
           type="text"

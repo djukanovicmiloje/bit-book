@@ -19,7 +19,9 @@ class PostsPage extends Component {
       return <div>Loading</div>;
     }
     //fileter out foobar
-    const postsToDisplay = this.props.posts.filter((post, index) => index > 36);
+    const postsToDisplay = this.props.posts
+      .filter(post => post.title === "001")
+      .sort((post1, post2) => post2.id - post1.id);
 
     return (
       <React.Fragment>
